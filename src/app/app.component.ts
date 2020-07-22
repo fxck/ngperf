@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import range from 'lodash-es/range';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngperf';
+  visible = true;
+  data = range(0, 200);
+
+  trackByIndex(index: number) {
+    return index;
+  }
+
 }
