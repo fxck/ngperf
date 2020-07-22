@@ -1,4 +1,5 @@
 import { Component, OnChanges, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import range from 'lodash-es/range';
 
 @Component({
   selector: 'app-complex',
@@ -7,6 +8,9 @@ import { Component, OnChanges, ChangeDetectionStrategy, Input, Output, EventEmit
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComplexComponent implements OnChanges {
+
+  arrayOfTen = range(0, 10);
+  arrayOfTwenty = range(0, 20);
 
   @Input()
   layoutMode: 'vertical' | 'horizontal' = 'horizontal';
